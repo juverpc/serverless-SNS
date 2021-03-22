@@ -22,12 +22,12 @@ package:
     
 functions:
   lambda-01:
-    handler: lambdas/lambda_01.greetings
+    handler: lambda/lambda_01.greetings
     events:
       - sns: arn:aws:sns:us-east-1:624733648801:Serverless-Test
     package:
       include:
-        - lambdas/lambda_01.py
+        - lambda/lambda_01.py
            
   
 

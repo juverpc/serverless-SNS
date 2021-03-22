@@ -6,15 +6,14 @@ provider:
   name: aws
   runtime: python3.8
   lambdaHashingVersion: 20201221
-  role: arn:aws:iam::624733648801:role/Role-serverless-function 
+  role: arn:aws:iam::624733648801:role/Role-serverless-function
   deploymentBucket:
-    name: example-dse-bucket
+    name: codebuildjuver
     serverSideEncryption: AES256
-  ##deploymentPrefix: serverless/example
-
-plugins:
-  - serverless-deployment-bucket     
+  #deploymentPrefix: serverless/example
   
+plugins:
+  - serverless-deployment-bucket
 
 package:
   individually: true
@@ -22,13 +21,14 @@ package:
     - "**"
     
 functions:
-           
   lambda-01:
     handler: lambdas/lambda_01.greetings
-     events:
+    events:
       - sns: arn:aws:sns:us-east-1:624733648801:Serverless-Test
     package:
       include:
         - lambdas/lambda_01.py
+           
+  
 
   

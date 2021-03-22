@@ -1,0 +1,28 @@
+service: second-test
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  role: arn:aws:iam::624733648801:role/Role-serverless-function 
+       
+  
+
+package:
+  individually: true
+  exclude:
+    - "**"
+    
+functions:
+           
+  lambda-01:
+    handler: lambdas/lambda_01.greetings
+     events:
+      - sns: arn:aws:sns:us-east-1:624733648801:Serverless-Test
+    package:
+      include:
+        - lambdas/lambda_01.py
+
+  

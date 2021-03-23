@@ -24,11 +24,18 @@ functions:
   lambda-01:
     handler: lambda/lambda_01.greetings
     events:
-      - sns: arn:aws:sns:us-east-1:624733648801:Serverless-Test
+      - sns:
+          arn: !Ref ServerlessTopic
+          topicName: ServerlessTopicTest
     package:
       include:
         - lambda/lambda_01.py
            
   
-
+resources:
+  Resources:
+    ServerlessTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ServerlessTopicTest
   

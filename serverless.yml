@@ -26,6 +26,9 @@ package:
 functions:
   lambda-01:
     handler: lambda/lambda_01.greetings
+    deploymentSettings:
+      type: Linear10PercentEvery1Minute
+      alias: Live
     events:
       - sns:
           arn: !Ref ServerlessTopic

@@ -29,19 +29,9 @@ functions:
     deploymentSettings:
       type: Linear10PercentEvery1Minute
       alias: Live
-    events:
-      - sns:
-          arn: !Ref ServerlessTopic
-          topicName: ServerlessTopicTest
-    package:
+   package:
       include:
         - lambda/lambda_01.py
            
-  
-resources:
-  Resources:
-    ServerlessTopic:
-      Type: AWS::SNS::Topic
-      Properties:
-        TopicName: ServerlessTopicTest
+
   

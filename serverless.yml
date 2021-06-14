@@ -4,8 +4,7 @@ frameworkVersion: '2'
 custom:
   deploymentSettings:
     codeDeployRole: arn:aws:iam::624733648801:role/codeDeploy-role-test
-    type: Linear10PercentEvery1Minute
-    alias: live
+ 
   
 provider:
   name: aws
@@ -30,9 +29,9 @@ package:
 functions:
   lambda-01:
     handler: lambda/lambda_01.greetings
-    # deploymentSettings:
-    #   type: Linear10PercentEvery1Minute
-    #   alias: Live
+    deploymentSettings:
+      type: Linear10PercentEvery1Minute
+      alias: Live
     package:
       include:
         - lambda/lambda_01.py

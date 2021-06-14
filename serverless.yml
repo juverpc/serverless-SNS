@@ -5,6 +5,7 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: python3.8
+  versionFunctions: true
   lambdaHashingVersion: 20201221
   role: arn:aws:iam::624733648801:role/Role-serverless-function
   deploymentBucket:
@@ -14,6 +15,8 @@ provider:
   
 plugins:
   - serverless-deployment-bucket
+  - serverless-plugin-canary-deployments
+
 
 package:
   individually: true

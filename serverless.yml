@@ -5,7 +5,7 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: python3.8
-  versionFunctions: true
+ # versionFunctions: true
   lambdaHashingVersion: 20201221
   role: arn:aws:iam::624733648801:role/Role-serverless-function
   deploymentBucket:
@@ -15,7 +15,7 @@ provider:
   
 plugins:
   - serverless-deployment-bucket
-  - serverless-plugin-canary-deployments
+ # - serverless-plugin-canary-deployments
 
 
 package:
@@ -26,9 +26,9 @@ package:
 functions:
   lambda-01:
     handler: lambda/lambda_01.greetings
-    deploymentSettings:
-      type: Linear10PercentEvery1Minute
-      alias: Live
+    # deploymentSettings:
+    #   type: Linear10PercentEvery1Minute
+    #   alias: Live
     package:
       include:
         - lambda/lambda_01.py

@@ -1,7 +1,10 @@
 service: second-test
 
 frameworkVersion: '2'
-
+custom:
+  deploymentSettings:
+    codeDeployRole: arn:aws:iam::624733648801:role/Testsafety-Role-CodeBuild
+  
 provider:
   name: aws
   runtime: python3.8

@@ -29,7 +29,7 @@ functions:
     deploymentSettings:
       type: Linear10PercentEvery1Minute
       alias: Live
-   package:
+    package:
       include:
         - lambda/lambda_01.py
            

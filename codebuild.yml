@@ -8,7 +8,7 @@ phases:
       - npm install
       - npm install -g serverless
       - npm install serverless-deployment-bucket --save-dev
-      #- serverless plugin install -n serverless-python-requirements@4.2.4
+    
 
   build:
 

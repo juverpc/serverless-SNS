@@ -35,6 +35,7 @@ functions:
     package:
       include:
         - lambda/lambda_01.py
+    provisionedConcurrency: 2
            
 
   

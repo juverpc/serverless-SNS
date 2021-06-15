@@ -20,7 +20,6 @@ plugins:
   - serverless-deployment-bucket
   - serverless-plugin-canary-deployments
 
-
 package:
   individually: true
   exclude:

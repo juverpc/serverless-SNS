@@ -10,7 +10,6 @@ phases:
       - npm install serverless-deployment-bucket 
       - npm install serverless-plugin-canary-deployments 
     
-
   build:
 
     commands:
